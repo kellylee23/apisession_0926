@@ -23,19 +23,6 @@ const Textmain=styled.div`
 
 const SERVER_URL = process.env.REACT_APP_URL;
 
-//const handleLogin = async (userId, password) => {
-
-  //try {
-    //const response=await
-    //axios.post(`${SERVER_URL}/api/user/login`,{
-     // userId,
-     // password,
-   // });
- // } catch (error) {
- //   alert(`로그인에 실패하였습니다.`)
- // }
-//}; 
-
 function Login() {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -51,7 +38,7 @@ function Login() {
     });
 
     if (response.status===200){
-      alert(`${response.status}, 로그인 되었습니다.`)
+      alert(`로그인 되었습니다. 사용자 고유 id: ${response.data}`)
     }
   } catch (error) {
     if (error.response) {
